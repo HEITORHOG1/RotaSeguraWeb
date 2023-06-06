@@ -7,3 +7,15 @@ Rastreamento GPS em tempo real e Geofence está disponível no sistema, que ajud
 
 # Sistema em construção 
 fazendo toda logica nas telas e constriundo layout.
+
+# Tecnologias
+Razor
+WebApi Rest
+Microservices .NET 6
+MySql
+RabbitMQ
+Docker
+
+# Arquitetura
+CQRS
+padrão Repositories
