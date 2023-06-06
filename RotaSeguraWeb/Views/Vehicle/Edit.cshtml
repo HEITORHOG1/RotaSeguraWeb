@@ -1,0 +1,141 @@
+﻿@model RotaSeguraWeb.Models.VehicleDTO
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="content-wrapper">
+    <h1>Detalhes do Veiculo</h1>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="row">
+                            <!-- Primeira coluna -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="VId" class="control-label"></label>
+                                    <input asp-for="VId" class="form-control" />
+                                    <span asp-validation-for="VId" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VRegistrationNo" class="control-label"></label>
+                                    <input asp-for="VRegistrationNo" class="form-control" />
+                                    <span asp-validation-for="VRegistrationNo" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VName" class="control-label"></label>
+                                    <input asp-for="VName" class="form-control" />
+                                    <span asp-validation-for="VName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VModel" class="control-label"></label>
+                                    <input asp-for="VModel" class="form-control" />
+                                    <span asp-validation-for="VModel" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VChassisNo" class="control-label"></label>
+                                    <input asp-for="VChassisNo" class="form-control" />
+                                    <span asp-validation-for="VChassisNo" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VEngineNo" class="control-label"></label>
+                                    <input asp-for="VEngineNo" class="form-control" />
+                                    <span asp-validation-for="VEngineNo" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Segunda coluna -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="VManufacturedBy" class="control-label"></label>
+                                    <input asp-for="VManufacturedBy" class="form-control" />
+                                    <span asp-validation-for="VManufacturedBy" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VType" class="control-label"></label>
+                                    <select asp-for="VType" class="form-control" asp-items="@(ViewBag.Types)"></select>
+                                    <span asp-validation-for="VType" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VColor" class="control-label"></label>
+                                    <input asp-for="VColor" class="form-control" />
+                                    <span asp-validation-for="VColor" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VMileagePerLitre" class="control-label"></label>
+                                    <input asp-for="VMileagePerLitre" class="form-control" />
+                                    <span asp-validation-for="VMileagePerLitre" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VIsActive" class="control-label"></label>
+                                    <input asp-for="VIsActive" class="form-control" />
+                                    <span asp-validation-for="VIsActive" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VGroup" class="control-label"></label>
+                                    <select asp-for="VGroup" class="form-control" asp-items="@(ViewBag.Groups)"></select>
+                                    <span asp-validation-for="VGroup" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <!-- Terceira coluna -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="VRegExpDate" class="control-label"></label>
+                                    <input asp-for="VRegExpDate" class="form-control" />
+                                    <span asp-validation-for="VRegExpDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VApiUrl" class="control-label"></label>
+                                    <input asp-for="VApiUrl" class="form-control" />
+                                    <span asp-validation-for="VApiUrl" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VApiUsername" class="control-label"></label>
+                                    <input asp-for="VApiUsername" class="form-control" />
+                                    <span asp-validation-for="VApiUsername" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VApiPassword" class="control-label"></label>
+                                    <input asp-for="VApiPassword" class="form-control" />
+                                    <span asp-validation-for="VApiPassword" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VCreatedBy" class="control-label"></label>
+                                    <input asp-for="VCreatedBy" class="form-control" />
+                                    <span asp-validation-for="VCreatedBy" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VCreatedDate" class="control-label"></label>
+                                    <input asp-for="VCreatedDate" class="form-control" />
+                                    <span asp-validation-for="VCreatedDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="VModifiedDate" class="control-label"></label>
+                                    <input asp-for="VModifiedDate" class="form-control" />
+                                    <span asp-validation-for="VModifiedDate" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+

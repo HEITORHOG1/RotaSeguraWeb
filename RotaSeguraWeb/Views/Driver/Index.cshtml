@@ -1,0 +1,104 @@
+﻿@using static RotaSeguraWeb.Models.Enuns.Enum
+@model IEnumerable<RotaSeguraWeb.Models.DriverDTO>
+@{
+    int pageNumber = ViewBag.PageNumber;
+    int totalPages = ViewBag.TotalPages;
+}
+@{
+    ViewData["Title"] = "Index";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<div class="content-wrapper">
+    <H2>
+        <a asp-action="Create">Adicionar Novo</a>
+    </H2>
+    <section class="content">
+        <div class="container-fluid">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.First().DId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.First().DName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.First().DMobile)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.First().DLicenseno)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.First().DLicenseExpDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.First().DCreatedDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.First().IsActive)
+                        </th>
+                        <th>AÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DMobile)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DLicenseno)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DLicenseExpDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DCreatedDate)
+                                </td>
+                                <td>
+                                    @Enum.GetName(typeof(DriveIsActive), item.IsActive)
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Edit", "Driver", new { id = item.DId  })" class="icon-action">
+                                        <i class="fa fa-edit"></i>
+                                    </a> |
+                                    <a href="@Url.Action("Details", "Driver", new { id = item.DId})" class="icon-action">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item @(pageNumber == 1 ? "disabled" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-pageNumber="@(pageNumber - 1)">Anterior</a>
+                    </li>
+                    @for (int i = 1; i <= totalPages; i++)
+                    {
+                        <li class="page-item @(i == pageNumber ? "active" : "")">
+                            <a class="page-link" asp-action="Index" asp-route-pageNumber="@i">@i</a>
+                        </li>
+                    }
+                    <li class="page-item @(pageNumber == totalPages ? "disabled" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-pageNumber="@(pageNumber + 1)">Próximo</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+</div>

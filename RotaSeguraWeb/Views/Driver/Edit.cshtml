@@ -1,0 +1,130 @@
+﻿@model RotaSeguraWeb.Models.DriverDTO
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<hr />
+<section class="content-wrapper">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="DId" class="control-label"></label>
+                                    <input asp-for="DId" class="form-control" />
+                                    <span asp-validation-for="DId" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DName" class="control-label"></label>
+                                    <input asp-for="DName" class="form-control" />
+                                    <span asp-validation-for="DName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DMobile" class="control-label"></label>
+                                    <input asp-for="DMobile" class="form-control" />
+                                    <span asp-validation-for="DMobile" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DAddress" class="control-label"></label>
+                                    <input asp-for="DAddress" class="form-control" />
+                                    <span asp-validation-for="DAddress" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DFile1" class="control-label"></label>
+                                    <input asp-for="DFile1" class="form-control" />
+                                    <span asp-validation-for="DFile1" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DCreatedDate" class="control-label"></label>
+                                    <input asp-for="DCreatedDate" class="form-control" />
+                                    <span asp-validation-for="DCreatedDate" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="DModifiedDate" class="control-label"></label>
+                                    <input asp-for="DModifiedDate" class="form-control" />
+                                    <span asp-validation-for="DModifiedDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DAge" class="control-label"></label>
+                                    <input asp-for="DAge" class="form-control" />
+                                    <span asp-validation-for="DAge" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DLicenseno" class="control-label"></label>
+                                    <input asp-for="DLicenseno" class="form-control" />
+                                    <span asp-validation-for="DLicenseno" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DLicenseExpDate" class="control-label"></label>
+                                    <input asp-for="DLicenseExpDate" class="form-control" />
+                                    <span asp-validation-for="DLicenseExpDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DTotalExp" class="control-label"></label>
+                                    <input asp-for="DTotalExp" class="form-control" />
+                                    <span asp-validation-for="DTotalExp" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DCreatedBy" class="control-label"></label>
+                                    <input asp-for="DCreatedBy" class="form-control" />
+                                    <span asp-validation-for="DCreatedBy" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="DDoj" class="control-label"></label>
+                                    <input asp-for="DDoj" class="form-control" />
+                                    <span asp-validation-for="DDoj" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DRef" class="control-label"></label>
+                                    <input asp-for="DRef" class="form-control" />
+                                    <span asp-validation-for="DRef" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="IsActive" class="control-label"></label>
+                                    <input asp-for="IsActive" class="form-control" />
+                                    <span asp-validation-for="IsActive" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DFile" class="control-label"></label>
+                                    <input asp-for="DFile" class="form-control" />
+                                    <span asp-validation-for="DFile" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DCreatedDate" class="control-label"></label>
+                                    <input asp-for="DCreatedDate" class="form-control" />
+                                    <span asp-validation-for="DCreatedDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DModifiedDate" class="control-label"></label>
+                                    <input asp-for="DModifiedDate" class="form-control" />
+                                    <span asp-validation-for="DModifiedDate" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

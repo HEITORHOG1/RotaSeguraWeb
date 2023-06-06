@@ -1,0 +1,124 @@
+﻿@using static RotaSeguraWeb.Models.Enuns.Enum
+@model RotaSeguraWeb.Models.VehicleDTO
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="content-wrapper">
+    <h1>Detalhes do Veiculo</h1>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card text-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-center">@Html.DisplayFor(model => model.VName)</h5>
+                            <p class="card-text text-center">
+                                Tipo: @Html.DisplayFor(model => model.VType)
+                                <br />
+                                Ativo: @Enum.GetName(typeof(VehicleIsActive), Model.VIsActive)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="col-md-9">
+                        <div class="card card-primary card-tabs">
+                            <div class="card-header p-0 pt-1">
+                                <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
+                                    <li class="pt-2 px-3"><h3 class="card-title"></h3></li>
+                                    <li class="nav-item  active">
+                                        <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="false">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">Reservas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#custom-tabs-two-messages" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">Cerca Geografica</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="custom-tabs-two-settings-tab" data-toggle="pill" href="#custom-tabs-two-settings" role="tab" aria-controls="custom-tabs-two-settings" aria-selected="true">Receita de Despesas</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <div class="tab-content" id="custom-tabs-two-tabContent">
+                                    <div class="tab-pane fade  active show" id="custom-tabs-two-home" role="tabpanel" aria-labelledby="custom-tabs-two-home-tab">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">@Html.DisplayNameFor(model => model.VRegistrationNo)</th>
+                                                    <td>@Html.DisplayFor(model => model.VRegistrationNo)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">@Html.DisplayNameFor(model => model.VName)</th>
+                                                    <td>@Html.DisplayFor(model => model.VName)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">@Html.DisplayNameFor(model => model.VModel)</th>
+                                                    <td>@Html.DisplayFor(model => model.VModel)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">@Html.DisplayNameFor(model => model.VChassisNo)</th>
+                                                    <td>@Html.DisplayFor(model => model.VChassisNo)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">@Html.DisplayNameFor(model => model.VEngineNo)</th>
+                                                    <td>@Html.DisplayFor(model => model.VEngineNo)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">@Html.DisplayNameFor(model => model.VManufacturedBy)</th>
+                                                    <td>@Html.DisplayFor(model => model.VManufacturedBy)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">@Html.DisplayNameFor(model => model.VMileagePerLitre)</th>
+                                                    <td>@Html.DisplayFor(model => model.VMileagePerLitre)</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th scope="row">@Html.DisplayNameFor(model => model.VApiUrl)</th>
+                                                    <td>@Html.DisplayFor(model => model.VApiUrl)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">@Html.DisplayNameFor(model => model.VApiUsername)</th>
+                                                    <td>@Html.DisplayFor(model => model.VApiUsername)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">@Html.DisplayNameFor(model => model.VApiPassword)</th>
+                                                    <td>@Html.DisplayFor(model => model.VApiPassword)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">@Html.DisplayNameFor(model => model.VCreatedDate)</th>
+                                                    <td>@Html.DisplayFor(model => model.VCreatedDate)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">@Html.DisplayNameFor(model => model.VModifiedDate)</th>
+                                                    <td>@Html.DisplayFor(model => model.VModifiedDate)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div>
+                                            @Html.ActionLink("Editar", "Edit", new {id = Model.VId }, new {@class = "btn btn-block bg-gradient-success btn-lg"})
+                                            <a asp-action="Index" class="btn btn-block bg-gradient-primary  btn-lg">Voltar</a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="custom-tabs-two-profile" role="tabpanel" aria-labelledby="custom-tabs-two-profile-tab">
+                                        2
+                                    </div>
+                                    <div class="tab-pane fade" id="custom-tabs-two-messages" role="tabpanel" aria-labelledby="custom-tabs-two-messages-tab">
+                                        3
+                                    </div>
+                                    <div class="tab-pane fade" id="custom-tabs-two-settings" role="tabpanel" aria-labelledby="custom-tabs-two-settings-tab">
+                                        4
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
